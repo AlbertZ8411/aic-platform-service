@@ -1,0 +1,11 @@
+server:
+  port: 80
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://sh-cynosdbmysql-grp-2zsyvcl8.sql.tencentcdb.com:29995/aic_platform
+    username: root
+    password: CfcPP7md
+
+
