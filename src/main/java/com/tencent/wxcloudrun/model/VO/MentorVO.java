@@ -1,17 +1,17 @@
 package com.tencent.wxcloudrun.model.VO;
 
-public class TeacherVO {
+public class MentorVO {
     private int id;
     private String name;
     private String avatar;
     private String title;
 
     // 无参构造函数
-    public TeacherVO() {
+    public MentorVO() {
     }
 
     // 带参构造函数
-    public TeacherVO(int id, String name, String avatar, String title) {
+    public MentorVO(int id, String name, String avatar, String title) {
         this.id = id;
         this.name = name;
         this.avatar = avatar;
@@ -54,7 +54,7 @@ public class TeacherVO {
     // 重写 toString 方法
     @Override
     public String toString() {
-        return "TeacherVO{" +
+        return "MentorVO{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", avatar='" + avatar + '\'' +
