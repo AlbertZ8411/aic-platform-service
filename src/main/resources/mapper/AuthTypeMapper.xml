@@ -2,17 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.tencent.wxcloudrun.dao.UserMapper">
 
-    <resultMap id="basicResultMap" type="com.tencent.wxcloudrun.model.po.auth.AuthTypet">
+    <resultMap id="basicAuthTypeResultMap" type="com.tencent.wxcloudrun.model.po.auth.AuthType">
         <id property="id" column="id" />
         <result property="name" column="name" />
     </resultMap>
 
-    <sql id="allFields">
+    <sql id="allAuthTypeFields">
         id, name
     </sql>
 
     <!-- default where statement needs a Condition instances as param -->
-    <sql id="basicWhere">
+    <sql id="basicAuthTypeWhere">
         <where>
             <if test="condition.instance.id != null">
                 AND id = #{condition.instance.id}

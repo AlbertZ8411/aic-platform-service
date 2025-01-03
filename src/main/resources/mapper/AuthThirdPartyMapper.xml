@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.tencent.wxcloudrun.dao.UserMapper">
 
-    <resultMap id="basicResultMap" type="com.tencent.wxcloudrun.model.po.auth.AuthThirdParty">
+    <resultMap id="basicAuthThirdPartyResultMap" type="com.tencent.wxcloudrun.model.po.auth.AuthThirdParty">
         <id property="id" column="id" />
         <result property="userBId" column="fk_user_b_id" />
         <result property="openId" column="fk_open_id" />
@@ -11,12 +11,12 @@
         <result property="authType" column="fk_auth_type" />
     </resultMap>
 
-    <sql id="allFields">
+    <sql id="allAuthThirdPartyFields">
         id, fk_user_b_id, open_id, access_token, access_expired, fk_auth_type
     </sql>
 
     <!-- default where statement needs a Condition instances as param -->
-    <sql id="basicWhere">
+    <sql id="basicAuthThirdPartyWhere">
         <where>
             <if test="condition.instance.id != null">
                 AND id = #{condition.instance.id}
