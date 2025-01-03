@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tencent.wxcloudrun.dao.UserMapper">
+
+    <resultMap id="basicResultMap" type="com.tencent.wxcloudrun.model.po.auth.AccountInfo">
+        <id property="id" column="id" />
+        <result property="userBId" column="fk_user_b_id" />
+        <result property="password" column="password" />
+        <result property="authStatus" column="fk_auth_status" />
+        <result property="authType" column="fk_auth_type" />
+        <result property="authId" column="auth_id" />
+    </resultMap>
+
+    <sql id="allFields">
+        id, fk_user_b_id, password, fk_auth_status, fk_auth_type, auth_id
+    </sql>
+
+    <!-- default where statement needs a Condition instances as param -->
+    <sql id="basicWhere">
+        <where>
+            <if test="condition.instance.id != null">
+                AND id = #{condition.instance.id}
+            </if>
+            <if test="condition.instance.userBId != null">
+                AND fk_user_b_id = #{condition.instance.userBId}
+            </if>
+            <if test="condition.instance.password != null">
+                AND password = #{condition.instance.password}
+            </if>
+            <if test="condition.instance.authStatus != null">
+                AND fk_auth_status = #{condition.instance.authStatus}
+            </if>
+            <if test="condition.instance.authType != null">
+                AND fk_auth_type = #{condition.instance.authType}
+            </if>
+            <if test="condition.instance.authId != null">
+                AND auth_id = #{condition.instance.authId}
+            </if>
+        </where>
+    </sql>
+
+</mapper>
