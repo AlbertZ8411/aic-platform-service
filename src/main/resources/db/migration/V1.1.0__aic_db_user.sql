@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS t_user(
     phone_no varchar(15),
     email varchar(100),
     code varchar(10),
-    fk_avartar_b_id char(36)
+    fk_avatar_b_id char(36)
 );
 
 CREATE TABLE IF NOT EXISTS t_account_inf(
