@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.tencent.wxcloudrun.dao.UserMapper">
 
-    <resultMap id="basicResultMap" type="com.tencent.wxcloudrun.model.po.auth.User">
+    <resultMap id="basicUserResultMap" type="com.tencent.wxcloudrun.model.po.auth.User">
         <id property="id" column="id" />
         <result property="bId" column="b_id" javaType="java.lang.String" />
         <result property="username" column="username" />
@@ -18,13 +18,13 @@
         <result property="avatarBId" column="fk_avatar_b_id" />
     </resultMap>
 
-    <sql id="allFields">
+    <sql id="allUserFields">
         id, b_id, username, first_name, last_name, fk_creator, created_date, updated_date,
         fx_updater, phone_no, email, code, fk_avatar_b_id
     </sql>
 
     <!-- default where statement needs a Condition instances as param -->
-    <sql id="basicWhere">
+    <sql id="basicUserWhere">
         <where>
             <if test="condition.instance.id != null">
                 AND  id = #{condition.instance.id}
