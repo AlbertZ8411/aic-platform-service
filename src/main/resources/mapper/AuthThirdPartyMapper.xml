@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tencent.wxcloudrun.dao.UserMapper">
+
+    <resultMap id="basicResultMap" type="com.tencent.wxcloudrun.model.po.auth.AuthThirdParty">
+        <id property="id" column="id" />
+        <result property="userBId" column="fk_user_b_id" />
+        <result property="openId" column="fk_open_id" />
+        <result property="accessToken" column="fk_access_token" />
+        <result property="accessExpired" column="fk_access_expired" javaType="java.sql.Timestamp" jdbcType="TIMESTAMP"/>
+        <result property="authType" column="fk_auth_type" />
+    </resultMap>
+
+    <sql id="allFields">
+        id, fk_user_b_id, open_id, access_token, access_expired, fk_auth_type
+    </sql>
+
+    <!-- default where statement needs a Condition instances as param -->
+    <sql id="basicWhere">
+        <where>
+            <if test="condition.instance.id != null">
+                AND id = #{condition.instance.id}
+            </if>
+            <if test="condition.instance.userBId != null">
+                AND fk_user_b_id = #{condition.instance.userBId}
+            </if>
+            <if test="condition.instance.openId != null">
+                AND open_id = #{condition.instance.openId}
+            </if>
+            <if test="condition.instance.accessToken != null">
+                AND access_token = #{condition.instance.accessToken}
+            </if>
+            <if test="condition.instance.accessExpired != null">
+                AND access_expired = #{condition.instance.accessExpired}
+            </if>
+            <if test="condition.instance.authType != null">
+                AND fk_auth_type = #{condition.instance.authType}
+            </if>
+        </where>
+    </sql>
+
+</mapper>

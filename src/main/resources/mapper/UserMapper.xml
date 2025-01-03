@@ -19,7 +19,7 @@
     </resultMap>
 
     <sql id="allFields">
-        id, b_id, username, first_name, last_name, fk_creator, create_date, update_date,
+        id, b_id, username, first_name, last_name, fk_creator, created_date, updated_date,
         fx_updater, phone_no, email, code, fk_avatar_b_id
     </sql>
 
